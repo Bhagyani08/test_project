@@ -5,6 +5,14 @@
 
 #include "mbed.h"
 
+void blink_led()
+{
+    DigitalOut led(LED1);
+    while (true) {
+        led = !led;
+        ThisThread::sleep_for(500ms);
+    }
+}
 
 int main()
 {
@@ -24,7 +32,7 @@ int main()
             led = !led;
             ThisThread::sleep_for(50ms);
         }
-
+        blink_led
         previous_pressed = pressed;
         ThisThread::sleep_for(10ms);
     }
