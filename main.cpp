@@ -15,8 +15,6 @@ int main()
     DigitalOut led(LED1, 0);
     DigitalIn button(BUTTON1, PullUp);
 
-    
-
     bool previous_pressed = false;
 
     while (true) {
