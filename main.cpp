@@ -5,27 +5,33 @@
 
 #include "mbed.h"
 
+void blink_led() {
+  DigitalOut led(LED1);
+  while (true) {
+    led = !led;
+    ThisThread::sleep_for(500ms);
+  }
+}
 
-
-int main()
-{
+int main() {
 #if !defined(LED1) || !defined(BUTTON1)
 #error "This example requires both LED1 and BUTTON1 pin definitions."
 #endif
 
-    DigitalOut led(LED1, 0);
-    DigitalIn button(BUTTON1, PullUp);
+  DigitalOut led(LED1, 0);
+  DigitalIn button(BUTTON1, PullUp);
 
-    bool previous_pressed = false;
+  bool previous_pressed = false;
 
-    while (true) {
-        const bool pressed = (button.read() == 0);
+  while (true) {
+    const bool pressed = (button.read() == 0);
 
-        if (pressed && !previous_pressed) {
-            led = !led;
-            ThisThread::sleep_for(50ms);
-        }
-        previous_pressed = pressed;
-        ThisThread::sleep_for(10ms);
+    if (pressed && !previous_pressed) {
+      led = !led;
+      ThisThread::sleep_for(50ms);
     }
+    blink_led();
+    previous_pressed = pressed;
+    ThisThread::sleep_for(10ms);
+  }
 }
