@@ -31,7 +31,7 @@ int main() {
       ThisThread::sleep_for(50ms);
     }
     blink_led();
-    
+    printf("Button is pressed\n");
     previous_pressed = pressed;
     ThisThread::sleep_for(10ms);
   }
