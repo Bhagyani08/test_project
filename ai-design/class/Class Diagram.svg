@@ -1,4 +1,2 @@
-<svg><text y='20'>Graphviz render error (/usr/bin/dot): Error: &lt;stdin&gt;: syntax error in line 102 scanning a quoted string (missing endquote? longer than 16384?)
-String starting:&quot;{MBED_CONF_FAT
-
----</text></svg>
+<svg><text y='20'>Graphviz render error (/usr/bin/dot): Error: &lt;stdin&gt;: syntax error in line 114 scanning a quoted string (missing endquote? longer than 16384?)
+String starting:&quot;{MBED_CONF_FAT_CHAN_FF_VOLUME_STRS()</text></svg>
